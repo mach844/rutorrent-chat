@@ -1,6 +1,4 @@
 #labels Featured,Phase-Implementation
-Installation of the chat plugin
-
 = Introduction =
 
 Here you can find information on how to install the chat plugin. Of course you need [http://code.google.com/p/rutorrent/ rutorrent] before you install this plugin.
@@ -19,7 +17,7 @@ cd /var/www/rutorrent/plugins/
 
 download the plugin from SVN:
 {{{
-svn checkout http://rutorrent-chat.googlecode.com/svn/trunk/ rutorrent-chat
+svn checkout http://rutorrent-chat.googlecode.com/svn/trunk/ chat
 }}}
 
 or download the plugin tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/rutorrent-chat/downloads/list downloads] page.
