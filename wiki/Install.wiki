@@ -20,7 +20,7 @@ download the plugin from SVN:
 svn checkout http://rutorrent-chat.googlecode.com/svn/trunk/ chat
 }}}
 
-*or* download the plugin tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/rutorrent-chat/downloads/list downloads] page.
+*or* download the plugin tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/rutorrent-chat/downloads/list downloads] page):
 {{{
 wget http://rutorrent-chat.googlecode.com/files/chat-1.1.tar.gz
 tar -zxf chat-1.1.tar.gz
