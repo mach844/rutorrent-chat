@@ -9,19 +9,25 @@ Here you can find the general information on the chat plugin including screensho
 = Details =
 
 After installation a new button will be added to the ruTorrent toolbar:
+
 http://rutorrent-chat.googlecode.com/svn/wiki/images/toolbar.png
 
 Clicking this button will toggle the chat window:
+
 http://rutorrent-chat.googlecode.com/svn/wiki/images/chat.png
 
 Depending on your smiley settings in the config file the chat could also be seen without image smileys:
+
 http://rutorrent-chat.googlecode.com/svn/wiki/images/stripped.png
 
 If the smileys are enabled the user can click on the smileys link behind the "Add message" text and a new window with the available smileys will pop up.
 There are currently two types of smileys (although very similar) available and the active type is defined in the config file:
-http://rutorrent-chat.googlecode.com/svn/wiki/images/smileys.png http://rutorrent-chat.googlecode.com/svn/wiki/images/smileys2.png
+
+http://rutorrent-chat.googlecode.com/svn/wiki/images/smileys.png
+http://rutorrent-chat.googlecode.com/svn/wiki/images/smileys2.png
 
 If a user has read all the messages (or doesn't want to read them) there is a link to clear the chat located behind the "Messages" text at the top of the chat window. When a user clicks on there a prompt will open with 3 options:
+
 http://rutorrent-chat.googlecode.com/svn/wiki/images/clear.png
 
 The options are quite simple: Cancel the operation, clear the chat temporarily so the current chat will be available again on a page reload or clear the chat permanent so the chat won't be available anymore even after a page reload.
