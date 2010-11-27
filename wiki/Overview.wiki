@@ -50,7 +50,7 @@ The options are quite simple: Cancel the operation, clear the chat temporarily s
 == Updating ==
 
 The update settings are defined in the config file and by default the chat will do an update every 10 seconds when inactive (closed) and every 1 second when active (opened).
-If an update has been found the chat window will automatically open.
+If new messages are received and the chat is inactive it will automatically be opened.
 
 
 == That's all ==
