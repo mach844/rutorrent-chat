@@ -1,8 +1,8 @@
 div#chat {background-image: url(./images/chat.png);}
 
-div#tchat {width: 400px; height: 420px;}
+div#tchat {width: 400px; height: 420px; text-shadow: none;}
 div#tchat div.dlg-header {background-image: url(./images/chat2.png);}
-div#tchat div#chatarea {background-color: #F0F0F0; width: 365px; height: 295px; overflow: auto; border: 1px solid #D0D0D0; font-size: 11px; font-family: Tahoma, Arial, Helvetica, sans-serif;}
+div#tchat div#chatarea {background-color: #F0F0F0; width: 365px; height: 295px; overflow: auto; border: 1px solid #D0D0D0; font-size: 11px; font-family: Tahoma, Arial, Helvetica, sans-serif; color: #000;}
 div#tchat input[type=text] {margin-top: 5px; margin-bottom: 5px; height: 12px; width: 260px;}
 
 .smileysContainer span#frown {background: url(./images/smileys.png) no-repeat 0px 0px; width: 14px; height: 14px; display: inline-block;}
