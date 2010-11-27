@@ -10,7 +10,7 @@ Here you can find the general information on the chat plugin including screensho
 
 == The toolbar button ==
 
-After installation a new button will be added to the ruTorrent toolbar:
+After installation a new button will be added to the ruTorrent toolbar (the one with the blue and green chat clouds):
 
 http://rutorrent-chat.googlecode.com/svn/wiki/images/toolbar.png
 
