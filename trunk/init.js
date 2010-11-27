@@ -88,7 +88,7 @@ plugin.update = function(data)
             var dateTime = new Date(parseInt(data.lines[i].dt) + plugin.timeFix);
 
             s += "<i>" + plugin.addZero(dateTime.getDate()) + "/" + plugin.addZero(dateTime.getMonth()) + " " + plugin.addZero(dateTime.getHours()) + ":" + plugin.addZero(dateTime.getMinutes()) + "</i> - ";
-            s += "<strong>" + plugin.parseText(data.lines[i].user) + "</strong>:";
+            s += "<strong>" + data.lines[i].user + "</strong>:";
             s += "<br />";
             s += plugin.parseText(data.lines[i].msg);
             s += "<br />";
