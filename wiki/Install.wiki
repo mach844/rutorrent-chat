@@ -1,4 +1,4 @@
-#labels Featured,Phase-Implementation
+#labels Featured,Phase-Deploy
 = Introduction =
 
 Here you can find information on how to install the chat plugin. Of course you need [http://code.google.com/p/rutorrent/ rutorrent] before you install this plugin.
