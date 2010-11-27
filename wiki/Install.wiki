@@ -4,11 +4,11 @@
 Here you can find information on how to install the chat plugin. Of course you need [http://code.google.com/p/rutorrent/ rutorrent] before you install this plugin.
 
 
-= Details =
+== Details ==
 
-*Note:* to download/edit files in your web directory you most likely need either root or sudo. Also your web directory and web user might differ from this guide.
+*Note:* to download/edit files in your web directory you most likely need either _*root*_ or _*sudo*_. Also your web directory and web user might differ from this guide.
 
-The installation of this plugin is quite simple:
+=== Installation ===
 
 move to your rutorrent plugins directory:
 {{{
