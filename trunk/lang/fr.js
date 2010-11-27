@@ -1,0 +1,21 @@
+theUILang.mnu_chat            = "Discussion...";
+theUILang.chat                = "Discussion";
+theUILang.chatMessages        = "Messages";
+theUILang.chatContribute      = "Envoyer un message";
+theUILang.chatSend            = "Envoyer";
+theUILang.chatClear           = "vider";
+theUILang.chatSmileys         = "smileys";
+theUILang.clearChat           = "Vider la fenêtre de discussion";
+theUILang.clearChatPrompt     = "Voullez-vous vider la fenêtre: temporairement (restauration après un rafraichissement), permanent, ou annuler cette opération?";
+theUILang.clearChatTemp       = "Temporairement";
+theUILang.clearChatPerm       = "Permanent";
+theUILang.clearChatCancel     = "Annuler";
+theUILang.mainchatNotExist    = "Le log principal de discussion n'existe pas.";
+theUILang.mainchatUnreadable  = "Impossible de lire le log principal de discussion.";
+theUILang.mainchatUnwritable  = "Impossible d'écrire dans le log principal de discussion.";
+theUILang.userchatCreateFail  = "Impossible de créer le log de discussion de l'utilisateur.";
+theUILang.userchatUnreadable  = "Impossible de lire le log de discussion de l'utilisateur.";
+theUILang.userchatUnwritable  = "Impossible d'écrire dans le log de discussion de l'utilisateur.";
+theUILang.chatInvalidReq      = "Requête invalide reçue.";
+
+thePlugins.get("chat").langLoaded();

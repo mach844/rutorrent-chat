@@ -1,0 +1,21 @@
+theUILang.mnu_chat            = "Chat...";
+theUILang.chat                = "Chat";
+theUILang.chatMessages        = "Berichten";
+theUILang.chatContribute      = "Voeg toe";
+theUILang.chatSend            = "Stuur";
+theUILang.chatClear           = "wissen";
+theUILang.chatSmileys         = "smileys";
+theUILang.clearChat           = "Wis chat";
+theUILang.clearChatPrompt     = "Hoe wil je de chat wissen? Tijdelijk (terug na pagina verversing), permanent, of deze handeling annuleren?";
+theUILang.clearChatTemp       = "Tijdelijk";
+theUILang.clearChatPerm       = "Permanent";
+theUILang.clearChatCancel     = "Annuleren";
+theUILang.mainchatNotExist    = "Hoofd chat log bestaat niet.";
+theUILang.mainchatUnreadable  = "Niet in staat om het hoofd chat log te lezen.";
+theUILang.mainchatUnwritable  = "Niet in staat om naar het hoofd chat log te schrijven.";
+theUILang.userchatCreateFail  = "Niet in staat om het user chat log the maken.";
+theUILang.userchatUnreadable  = "Niet in staat om het user chat log te lezen.";
+theUILang.userchatUnwritable  = "Niet in staat om naar het user chat log the schrijven.";
+theUILang.chatInvalidReq      = "Onjuist chat verzoek ontvangen.";
+
+thePlugins.get("chat").langLoaded();

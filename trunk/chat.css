@@ -1,0 +1,30 @@
+div#chat {background-image: url(./images/chat.png);}
+
+div#tchat {width: 400px; height: 420px;}
+div#tchat div.dlg-header {background-image: url(./images/chat2.png);}
+div#tchat div#chatarea {background-color: #F0F0F0; width: 365px; height: 295px; overflow: auto; border: 1px solid #D0D0D0; font-size: 11px; font-family: Tahoma, Arial, Helvetica, sans-serif;}
+div#tchat input[type=text] {margin-top: 5px; margin-bottom: 5px; height: 12px; width: 260px;}
+
+.smileysContainer span#frown {background: url(./images/smileys.png) no-repeat 0px 0px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#shocked {background: url(./images/smileys.png) no-repeat -14px 0px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#wink {background: url(./images/smileys.png) no-repeat -28px 0px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#angry {background: url(./images/smileys.png) no-repeat -42px 0px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#straight {background: url(./images/smileys.png) no-repeat -56px 0px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#slant {background: url(./images/smileys.png) no-repeat -84px 0px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#grin {background: url(./images/smileys.png) no-repeat -98px 0px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#tongue {background: url(./images/smileys.png) no-repeat -112px 0px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#sad {background: url(./images/smileys.png) no-repeat -112px -14px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#wince {background: url(./images/smileys.png) no-repeat -42px -28px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#smile {background: url(./images/smileys.png) no-repeat -56px -28px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#cool {background: url(./images/smileys.png) no-repeat -70px -28px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#devil {background: url(./images/smileys.png) no-repeat -112px -28px; width: 14px; height: 14px; display: inline-block;}
+.smileysContainer span#love {background: url(./images/smileys.png) no-repeat -42px -14px; width: 14px; height: 14px; display: inline-block;}
+
+div#chatSmileys div.dlg-header {background-image: url(./images/chat2.png);}
+div#chatSmileys table {border-collapse: collapse;}
+div#chatSmileys table tr td {width: 15px; white-space: nowrap; border: solid 1px #D0D0D0; padding: 5px;}
+div#chatSmileys table tr td span {cursor: pointer;}
+
+div#clearChat {height: 105px; width: 380px;}
+div#clearChat div.dlg-header {background-image: url(./images/error.gif);}
+div#clearChat div.content {line-height: 16px; margin: 5px; padding: 5px; width: 360px;}
