@@ -47,4 +47,12 @@ http://rutorrent-chat.googlecode.com/svn/wiki/images/clear_prompt.png
 The options are quite simple: Cancel the operation, clear the chat temporarily so the current chat will be available again on a page reload or clear the chat permanent so the chat won't be available anymore even after a page reload.
 
 
+== Updating ==
+
+The update settings are defined in the config file and by default the chat will do an update every 10 seconds when inactive (closed) and every 1 second when active (opened).
+If an update has been found the chat window will automatically open.
+
+
+== That's all ==
+
 That's all the details there are (for now) on this plugin. If you are interested in using it you can go to the [http://code.google.com/p/rutorrent-chat/wiki/Install install] page to see how to install it.
