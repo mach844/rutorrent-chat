@@ -1,0 +1,21 @@
+theUILang.mnu_chat            = "Chat...";
+theUILang.chat                = "Chat";
+theUILang.chatMessages        = "Messages";
+theUILang.chatContribute      = "Add message";
+theUILang.chatSend            = "Send";
+theUILang.chatClear           = "clear";
+theUILang.chatSmileys         = "smileys";
+theUILang.clearChat           = "Clear chat";
+theUILang.clearChatPrompt     = "Do you want the clear the chat temporarily (restored after page refresh), permanently, or cancel this operation?";
+theUILang.clearChatTemp       = "Temporarily";
+theUILang.clearChatPerm       = "Permanently";
+theUILang.clearChatCancel     = "Cancel";
+theUILang.mainchatNotExist    = "Main chat log does not exist.";
+theUILang.mainchatUnreadable  = "Unable to read main chat log.";
+theUILang.mainchatUnwritable  = "Unable to write to main chat log.";
+theUILang.userchatCreateFail  = "Unable to create user chat log.";
+theUILang.userchatUnreadable  = "Unable to read user chat log.";
+theUILang.userchatUnwritable  = "Unable to write to user chat log.";
+theUILang.chatInvalidReq      = "Invalid chat request received.";
+
+thePlugins.get("chat").langLoaded();
