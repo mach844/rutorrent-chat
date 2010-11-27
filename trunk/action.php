@@ -45,9 +45,9 @@ function updateChatLog() {
 if ($_REQUEST["action"]) {
     switch ($_REQUEST["action"]) {
         case "add":
-            $message = date("d/m H:i") . "~" . getUser() . "~" . $_REQUEST["message"] . "\n";
-            if (!file_put_contents($mainChatLog, $message, FILE_APPEND))
-                $error = "{ \"error\": theUILang.mainchatUnwritable }";
+            $message = round(microtime(true) * 1000) . "~" . getUser() . "~" . $_REQUEST["message"] . "\n";
+            if (!is_writable($mainChatLog) || !file_put_contents($mainChatLog, $message, FILE_APPEND))
+                $ret = "{ \"error\": theUILang.mainchatUnwritable }";
             else
                 $ret = "{ \"success\": \"true\" }";
             break;
