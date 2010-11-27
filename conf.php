@@ -10,4 +10,7 @@ $inactiveInterval = 10;
 
 // set to TRUE to enable smileys in the chat or FALSE to disable smileys
 $useSmileys = TRUE;
+
+// smileyset (will append the number to the span id) 1 for round, 2 for squared
+$smileySet = 2;
 ?>

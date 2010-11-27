@@ -21,59 +21,26 @@ plugin.check = function()
     theWebUI.request("?action=updatechat", [plugin.update,plugin], true);
 }
 
-plugin.fixDateTime = function(dateTimeStr, add)
-{
-    if (add == 0)
-        return dateTime;
-
-    var lastDay = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
-
-    var dateTime = dateTimeStr.split(" ");
-    var time = dateTime[1].split(":");
-    var hour = parseInt(time[0]);
-
-    if (hour + add >= 24) {
-        var date = dateTime[0].split("/");
-        var day = parseInt(date[0]);
-        var month = parseInt(date[1]);
-
-        if (day >= lastDay[month])
-            return("01/" + (month + 1 > 12 ? "01" : (month + 1)) + " " + (hour + add - 24) + ":" + time[1]);
-        else
-            return((day + 1) + "/" + month + " " + (hour + add - 24) + ":" + time[1]);
-    } else if (hour + add < 0) {
-        var date = dateTime[0].split("/");
-        var day = parseInt(date[0]);
-        var month = parseInt(date[1]);
-
-        if (day == 1)
-            return(lastDay[(month - 1 == 0 ? 12 : (month - 1))] + "/" + (month - 1 == 0 ? 12 : (month - 1)) + " " + (hour + add + 24) + ":" + time[1]);
-        else
-            return((day - 1) + "/" + month + " " + (hour + add + 24) + ":" + time[1]);
-    } else
-         return(dateTime[0] + " " + (hour + add) + ":" + time[1]);
-}
-
 plugin.parseText = function(text)
 {
     text = text.replace(/&(?!\w+([;\s]|$))/g, "&amp;");
     text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
     if (plugin.useSmileys) {
-        text = text.replace(/&gt;:\)|&gt;:-\)/i, "<span id='devil'></span>");
-        text = text.replace(/:\(|:-\(/i, "<span id='frown'></span>");
-        text = text.replace(/:O|:-O/i, "<span id='shocked'></span>");
-        text = text.replace(/;\)|;-\)/i, "<span id='wink'></span>");
-        text = text.replace(/X\)|X-\)/i, "<span id='angry'></span>");
-        text = text.replace(/:\||:-\|/i, "<span id='straight'></span>");
-        text = text.replace(/(:\/|:-\/)[^\/]/i, "<span id='slant'></span>");
-        text = text.replace(/:D|:-D/i, "<span id='grin'></span>");
-        text = text.replace(/:P|:-P/i, "<span id='tongue'></span>");
-        text = text.replace(/:'\(|:'-\(/i, "<span id='sad'></span>");
-        text = text.replace(/&gt;\.&lt;/i, "<span id='wince'></span>");
-        text = text.replace(/:\)|:-\)/i, "<span id='smile'></span>");
-        text = text.replace(/8\)|8-\)|B\)|B-\)/i, "<span id='cool'></span>");
-        text = text.replace(/&lt;3/i, "<span id='love'></span>");
+        text = text.replace(/&gt;:\)|&gt;:-\)/i, "<span id='devil" + plugin.smileySet + "'></span>");
+        text = text.replace(/:\(|:-\(/i, "<span id='frown" + plugin.smileySet + "'></span>");
+        text = text.replace(/:O|:-O/i, "<span id='shocked" + plugin.smileySet + "'></span>");
+        text = text.replace(/;\)|;-\)/i, "<span id='wink" + plugin.smileySet + "'></span>");
+        text = text.replace(/X\)|X-\)/i, "<span id='angry" + plugin.smileySet + "'></span>");
+        text = text.replace(/:\||:-\|/i, "<span id='straight" + plugin.smileySet + "'></span>");
+        text = text.replace(/(:\/|:-\/)[^\/]/i, "<span id='slant" + plugin.smileySet + "'></span>");
+        text = text.replace(/:D|:-D/i, "<span id='grin" + plugin.smileySet + "'></span>");
+        text = text.replace(/:P|:-P/i, "<span id='tongue" + plugin.smileySet + "'></span>");
+        text = text.replace(/:'\(|:'-\(/i, "<span id='sad" + plugin.smileySet + "'></span>");
+        text = text.replace(/&gt;\.&lt;/i, "<span id='wince" + plugin.smileySet + "'></span>");
+        text = text.replace(/:\)|:-\)/i, "<span id='smile" + plugin.smileySet + "'></span>");
+        text = text.replace(/8\)|8-\)|B\)|B-\)/i, "<span id='cool" + plugin.smileySet + "'></span>");
+        text = text.replace(/&lt;3/i, "<span id='love" + plugin.smileySet + "'></span>");
     }
 
     var pattern = /(https?:\/\/|www\.)((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|((\d{1,3}\.){3}\d{1,3}))(\:\d+)?(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(\#[-a-z\d_]*)?/gi;
@@ -96,16 +63,32 @@ plugin.parseText = function(text)
     return(text);
 }
 
+plugin.addZero = function(num)
+{
+    if (num > 10)
+        return num;
+    else
+        return '0' + String(num);
+}
+
+plugin.checkSuccess = function(data)
+{
+    if (data.error)
+        log("Chat plugin: " + data.error);
+}
+
 plugin.update = function(data)
 {
     if (data.error)
-        log(data.error);
+        log("Chat plugin: " + data.error);
     else {
         var s = "";
 
         for (var i = 0; i < data.lines.length; i++) {
-            s += "<i>" + plugin.fixDateTime(data.lines[i].dt, plugin.addHours) + "</i> - ";
-            s += "<strong>" + data.lines[i].user + "</strong>:";
+            var dateTime = new Date(parseInt(data.lines[i].dt) + plugin.timeFix);
+
+            s += "<i>" + plugin.addZero(dateTime.getDate()) + "/" + plugin.addZero(dateTime.getMonth()) + " " + plugin.addZero(dateTime.getHours()) + ":" + plugin.addZero(dateTime.getMinutes()) + "</i> - ";
+            s += "<strong>" + plugin.parseText(data.lines[i].user) + "</strong>:";
             s += "<br />";
             s += plugin.parseText(data.lines[i].msg);
             s += "<br />";
@@ -138,7 +121,7 @@ theWebUI.sendChat = function()
     if ($("#chatMessage").val() == "")
         return(false);
 
-    theWebUI.request("?action=sendchat", null, true);
+    theWebUI.request("?action=sendchat", [plugin.checkSuccess,plugin], true);
     $("#chatMessage").val("");
 }
 
@@ -148,7 +131,7 @@ theWebUI.clearChatConfirmed = function()
         return(false);
 
     $("#chatarea").html("");
-    theWebUI.request("?action=clearchat", null, true);
+    theWebUI.request("?action=clearchat", [plugin.checkSuccess,plugin], true);
     plugin.lastLine = 0;
 }
 
@@ -210,24 +193,24 @@ plugin.onLangLoaded = function()
         theDialogManager.make("chatSmileys", theUILang.chatSmileys.charAt(0).toUpperCase() + theUILang.chatSmileys.substr(1),
             "<table class='smileysContainer'>"+
                 "<tr>"+
-                    "<td><span id='frown' title=':('></span></td>"+
-                    "<td><span id='shocked' title=':o'></span></td>"+
-                    "<td><span id='wink' title=';)'></span></td>"+
-                    "<td><span id='angry' title='X)'></span></td>"+
-                    "<td><span id='straight' title=':|'></span></td>"+
+                    "<td><span id='frown" + plugin.smileySet + "' title=':('></span></td>"+
+                    "<td><span id='shocked" + plugin.smileySet + "' title=':o'></span></td>"+
+                    "<td><span id='wink" + plugin.smileySet + "' title=';)'></span></td>"+
+                    "<td><span id='angry" + plugin.smileySet + "' title='X)'></span></td>"+
+                    "<td><span id='straight" + plugin.smileySet + "' title=':|'></span></td>"+
                 "</tr>"+
                 "<tr>"+
-                    "<td><span id='slant' title=':/'></span></td>"+
-                    "<td><span id='grin' title=':D'></span></td>"+
-                    "<td><span id='tongue' title=':P'></span></td>"+
-                    "<td><span id='sad' title=\":'(\"></span></td>"+
-                    "<td><span id='wince' title='>.<'></span></td>"+
+                    "<td><span id='slant" + plugin.smileySet + "' title=':/'></span></td>"+
+                    "<td><span id='grin" + plugin.smileySet + "' title=':D'></span></td>"+
+                    "<td><span id='tongue" + plugin.smileySet + "' title=':P'></span></td>"+
+                    "<td><span id='sad" + plugin.smileySet + "' title=\":'(\"></span></td>"+
+                    "<td><span id='wince" + plugin.smileySet + "' title='>.<'></span></td>"+
                 "</tr>"+
                 "<tr>"+
-                    "<td><span id='smile' title=':)'></span></td>"+
-                    "<td><span id='cool' title='8)'></span></td>"+
-                    "<td><span id='devil' title='>:)'></span></td>"+
-                    "<td><span id='love' title='<3'></span></td>"+
+                    "<td><span id='smile" + plugin.smileySet + "' title=':)'></span></td>"+
+                    "<td><span id='cool" + plugin.smileySet + "' title='8)'></span></td>"+
+                    "<td><span id='devil" + plugin.smileySet + "' title='>:)'></span></td>"+
+                    "<td><span id='love" + plugin.smileySet + "' title='<3'></span></td>"+
                     "<td></td>"+
                 "</tr>"+
             "</table>"
@@ -281,23 +264,6 @@ plugin.onLangLoaded = function()
     {
         $("#chatMessage").focus();
     });
-
-    var localDateTime = theConverter.date(new Date().getTime() / 1000).split(" ");
-    var localHour = parseInt(localDateTime[1].split(":")[0]);
-
-    if (localHour != plugin.remoteHour) {
-        var localDay = parseInt(localDateTime[0].split(".")[0]);
-
-        if (localDay > plugin.remoteDay)
-            plugin.addHours = 24 - (plugin.remoteHour - localHour);
-        else if (localDay < plugin.remoteDay)
-            plugin.addHours = (localHour - plugin.remoteHour) - 24;
-        else if (localHour > plugin.remoteHour)
-            plugin.addHours = (localHour - plugin.remoteHour);
-        else
-            plugin.addHours = -(plugin.remoteHour - localHour);
-    } else
-        plugin.addHours = 0;
 
     plugin.lastLine = 0;
     plugin.check();
