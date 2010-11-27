@@ -65,7 +65,7 @@ plugin.parseText = function(text)
 
 plugin.addZero = function(num)
 {
-    if (num > 10)
+    if (num >= 10)
         return num;
     else
         return '0' + String(num);
