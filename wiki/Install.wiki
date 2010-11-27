@@ -27,12 +27,12 @@ tar -zxf chat-1.0.tar.gz
 rm chat-1.0.tar.gz
 }}}
 
-and change the ownership of the files to your webuser:
+and change the ownership of the files to your web user:
 {{{
 chown -R www-user:www-user chat/
 }}}
 
 
-== Congratulations ==
+== Finished ==
 
 You can now start using the plugin!
