@@ -33,6 +33,36 @@ chown -R www-user:www-user chat/
 }}}
 
 
+== Configuration ==
+
+If you want to change some of the configuration you can open up *conf.php* in your favorite editor (nano or vim or something) and there are the following options:
+
+the location of the file where all messages are written to and where each users pulls the messages from to his/her own file (you probably don't need to change this):
+{{{
+$mainChatLog = dirname(__FILE__) . '/chat.log';
+}}}
+
+the time in seconds that the chat window should check for new messages when it's active (open):
+{{{
+$activeInterval = 1;
+}}}
+
+the time in seconds that the chat window should check for new messages when it's inactive (closed):
+{{{
+$inactiveInterval = 10;
+}}}
+
+do you want to enable smiles? TRUE for yes and FALSE for no:
+{{{
+$useSmileys = TRUE;
+}}}
+
+which smiley set do you want to use? At the moment of writing this there are 2 smiley sets available, use value 1 for round smileys and 2 for squared smileys:
+{{{
+$smileySet = 2;
+}}}
+
+
 == Finished ==
 
 You can now start using the plugin!
