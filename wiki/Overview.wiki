@@ -38,6 +38,8 @@ There are currently two types of smileys (although very similar) available and t
 http://rutorrent-chat.googlecode.com/svn/wiki/images/smileys.png
 http://rutorrent-chat.googlecode.com/svn/wiki/images/smileys2.png
 
+Yes, these smileys are taken from google chat. I'm not that creative myself when it comes to design and these seem to fit in quite good. If you have a suggestion for other icons let me know.
+
 
 == Clearing the chat ==
 
