@@ -32,6 +32,7 @@ http://rutorrent-chat.googlecode.com/svn/wiki/images/stripped.png
 == The smileys ==
 
 If the smileys are enabled the user can click on the smileys link behind the "Add message" text and a new window with the available smileys will pop up.
+When you hover over the smiley it tells you the "code" for the smiley or you can simply click the smiley and it will be appended to the message field.
 There are currently two types of smileys (although very similar) available and the active type is defined in the config file:
 
 http://rutorrent-chat.googlecode.com/svn/wiki/images/smileys.png
