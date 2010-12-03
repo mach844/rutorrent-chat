@@ -19,7 +19,7 @@ if ($chatSettings["pm"]) {
     $users = scandir($rootPath . "/share/users/");
     if ($users && count($users) > 0) {
         foreach ($users as $user) {
-            if ($user == "." || $user == ".." || $user == $me)
+            if ($user[0] == "."|| $user == $me)
                 continue;
 
             $chatList[$user] = array();

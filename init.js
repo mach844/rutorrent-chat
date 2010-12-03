@@ -166,7 +166,7 @@ plugin.updateList = function(data)
                 addClass = " class='nopm'";
 
             chats++;
-            options += "<option value='" + key + "'" + addClass + (key == plugin.currentChat ? " selected='selected'" : "") + ">" + (key == "main_chat" ? "Everybody" : key) + "</option>";
+            options += "<option value='" + key + "'" + addClass + (key == plugin.currentChat ? " selected='selected'" : "") + ">" + (key == "main_chat" ? theUILang.chatEverybody : key) + "</option>";
         }
 
         $("#chatselect").html(options);
@@ -296,7 +296,7 @@ plugin.onLangLoaded = function()
         chatList = ""+
         "<div id='chatusers'>"+
             "<fieldset>"+
-                "<legend>" + theUILang.chatWith + "</legend>"+
+                "<legend>" + theUILang.chatList + "</legend>"+
                 "<div id='userlist'>"+
                     "<select id='chatselect' name='users' multiple='multiple'" + (chats > 20 ? " style='width='80px;'" : "") + ">"+
                         options+
@@ -336,7 +336,7 @@ plugin.onLangLoaded = function()
             plugin.currentChat = value;
             $("#chatarea").html("");
             if (value == "main_chat") {
-                $("#tchat-header").text("Chat");
+                $("#tchat-header").text(theUILang.chat);
                 $("#chatMessage").removeAttr("disabled");
                 $("#chatMessage").removeAttr("style");
                 $("#chatMessage").focus();
