@@ -1,5 +1,6 @@
 theUILang.mnu_chat            = "Chat...";
 theUILang.chat                = "Chat";
+theUILang.chatList            = "Chats";
 theUILang.chatWith            = "Chat with";
 theUILang.chatDisabled        = "disabled";
 theUILang.chatEverybody       = "Everybody";
@@ -19,7 +20,7 @@ theUILang.chatPopup           = "Popup chat on new message";
 theUILang.chatPMs             = "Enable PMs";
 theUILang.chatActive          = "Update opened every:";
 theUILang.chatInactive        = "Update closed every:";
-theUILang.chatFormat          = "Datetime format:";
+theUILang.chatFormat          = "Date/time format:";
 theUILang.chatFormatHelp      = "D = day, M = month, Y = year, h = hour, m = minute, s = second";
 theUILang.chatShowSmileys     = "Show smiley icons";
 theUILang.chatSmileySet       = "Smiley set:";

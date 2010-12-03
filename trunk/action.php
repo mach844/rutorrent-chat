@@ -95,7 +95,7 @@ function getChatList() {
     $users = scandir($rootPath . "/share/users/");
     if ($users && count($users) > 0) {
         foreach ($users as $user) {
-            if ($user == "." || $user == ".." || $user == $me)
+            if ($user[0] == "." || $user == $me)
                 continue;
 
             $chatList[$user] = array();
@@ -179,7 +179,7 @@ if (!empty($_REQUEST["action"])) {
                     $lines[] = $ln;
                 }
 
-                $ret = json_encode(array("chat" => $_REQUEST["chat"], "lines" => $lines));
+                $ret = "{ \"chat\": \"" . $_REQUEST["chat"] . "\", \"lines\": " . json_encode($lines) . " }";
             } else
                 $ret = "{ \"chat\": \"" . $_REQUEST["chat"] . "\", \"lines\": [] }";
             break;
