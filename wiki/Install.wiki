@@ -22,9 +22,9 @@ svn checkout http://rutorrent-chat.googlecode.com/svn/trunk/ chat
 
 *or* download the plugin tarball and unpack it (make sure to check for the latest version on the [http://code.google.com/p/rutorrent-chat/downloads/list downloads] page):
 {{{
-wget http://rutorrent-chat.googlecode.com/files/chat-1.1.tar.gz
-tar -zxf chat-1.1.tar.gz
-rm chat-1.1.tar.gz
+wget http://rutorrent-chat.googlecode.com/files/chat-2.0.tar.gz
+tar -zxf chat-2.0.tar.gz
+rm chat-2.0.tar.gz
 }}}
 
 and change the ownership of the files to your web user:
@@ -35,32 +35,7 @@ chown -R www-user:www-user chat/
 
 === Configuration ===
 
-If you want to change some of the configuration you can open up *conf.php* in your favorite editor (nano or vim or something) and there are the following options:
-
-the location of the file where all messages are written to and where each users pulls the messages from to his/her own file (you probably don't need to change this):
-{{{
-$mainChatLog = dirname(__FILE__) . '/chat.log';
-}}}
-
-the time in seconds that the chat window should check for new messages when it's active (open):
-{{{
-$activeInterval = 1;
-}}}
-
-the time in seconds that the chat window should check for new messages when it's inactive (closed):
-{{{
-$inactiveInterval = 10;
-}}}
-
-do you want to enable smiles? TRUE for yes and FALSE for no:
-{{{
-$useSmileys = TRUE;
-}}}
-
-which smiley set do you want to use? At the moment of writing this there are 2 smiley sets available, use value 1 for round smileys and 2 for squared smileys:
-{{{
-$smileySet = 2;
-}}}
+If you want to change some of the configuration you can open up *conf.php* in your favorite editor (nano or vim or something) and there are the default options for all users. Users can later override these with their own preferences through the settings menu as described on the [http://code.google.com/p/rutorrent-chat/wiki/Overview overview] page.
 
 
 === Finished ===
