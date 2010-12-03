@@ -157,6 +157,11 @@ if (!empty($_REQUEST["action"])) {
                 break;
             }
 
+            if (!file_exists(getSettingsPath() . "/chat/" . $_REQUEST["chat"] . ".log")) {
+                $ret = "{ \"chat\": \"" . $_REQUEST["chat"] . "\", \"lines\": [] }";
+                break;
+            }
+
             $lines = file(getSettingsPath() . "/chat/" . $_REQUEST["chat"] . ".log");
             if (!$lines) {
                 $ret = "{ \"error\": theUILang.logUnreadable }";
@@ -174,10 +179,9 @@ if (!empty($_REQUEST["action"])) {
                     $lines[] = $ln;
                 }
 
-                $ret = json_encode(array("chat" => $_REQUEST["chat"], "chatList" => getChatList(), "lines" => $lines));
-            } else {
-                $ret = "{ \"chat\": \"" . $_REQUEST["chat"] . "\", \"chatList\": " . json_encode(getChatList()) . ", \"lines\": [] }";
-            }
+                $ret = json_encode(array("chat" => $_REQUEST["chat"], "lines" => $lines));
+            } else
+                $ret = "{ \"chat\": \"" . $_REQUEST["chat"] . "\", \"lines\": [] }";
             break;
         case "clear":
             if (empty($_REQUEST["chat"]) || !validChat($_REQUEST["chat"]))
@@ -220,7 +224,7 @@ if (!empty($_REQUEST["action"])) {
 
             $settings = array();
             $settings["popup"] = ($_REQUEST["popup"] ? 1 : 0);
-            $settings["pm"] = ($_REQUEST["smileys"] ? 1 : 0);
+            $settings["pm"] = ($_REQUEST["pm"] ? 1 : 0);
             $settings["aInterval"] = $aInterval;
             $settings["iInterval"] = $iInterval;
             $settings["smileys"] = ($_REQUEST["smileys"] ? 1 : 0);
