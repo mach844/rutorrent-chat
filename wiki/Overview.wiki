@@ -17,7 +17,7 @@ http://rutorrent-chat.googlecode.com/svn/wiki/images/toolbar.png
 
 == The chat window ==
 
-Clicking this button will toggle the chat window:
+Clicking this button will toggle the chat window, here you can see all the messages and a list of chats (main + all users). If the username in the list has a red color you cannot send a PM to that user because the user has PMs disabled (the user is still shown in the list because he may have sent you a PM before he disabled it and you should be able to read that). If a background is darker grey and the username is blue it means the user has sent you a new PM.
 
 http://rutorrent-chat.googlecode.com/svn/wiki/images/chat.png
 
@@ -54,7 +54,8 @@ If a user has read all the messages (or doesn't want to read them) there is a li
 
 http://rutorrent-chat.googlecode.com/svn/wiki/images/clear_prompt.png
 
-The options are quite simple: Cancel the operation, clear the chat temporarily so the current chat will be available again on a page reload or clear the chat permanent so the chat won't be available anymore even after a page reload.
+The options are quite simple: Cancel the operation, clear the chat temporarily so the current chat will be available again after a reload or clear the chat permanent so the chat won't be available anymore even after a page reload.
+Note that when you switch between PMs and/or main chat it reload the chat window, so if you clear the chat temporarily it will be available again if you switch to a different chat and back.
 
 
 == Changing settings ==
