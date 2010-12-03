@@ -29,6 +29,13 @@ Depending on your smiley settings in the config file the chat could also be seen
 http://rutorrent-chat.googlecode.com/svn/wiki/images/stripped.png
 
 
+== The chat window with PMs disabled ==
+
+If you have disabled PMs it will not show the available chats window (as you only need the main chat when you don't want to use PMs):
+
+http://rutorrent-chat.googlecode.com/svn/wiki/images/nopm.png
+
+
 == The smileys ==
 
 If the smileys are enabled the user can click on the smileys link behind the "Add message" text and a new window with the available smileys will pop up.
@@ -50,10 +57,11 @@ http://rutorrent-chat.googlecode.com/svn/wiki/images/clear_prompt.png
 The options are quite simple: Cancel the operation, clear the chat temporarily so the current chat will be available again on a page reload or clear the chat permanent so the chat won't be available anymore even after a page reload.
 
 
-== Updating ==
+== Changing settings ==
 
-The update settings are defined in the config file and by default the chat will do an update every 10 seconds when inactive (closed) and every 1 second when active (opened).
-If new messages are received and the chat is inactive it will automatically be opened.
+Each user can change their chat preferences through the ruTorrent settings menu.
+
+http://rutorrent-chat.googlecode.com/svn/wiki/images/settings.png
 
 
 == That's all ==
