@@ -35,7 +35,7 @@ chown -R www-user:www-user chat/
 
 === Configuration ===
 
-If you want to change some of the configuration you can open up *conf.php* in your favorite editor (nano or vim or something) and there are the default options for all users. Users can later override these with their own preferences through the settings menu as described on the [http://code.google.com/p/rutorrent-chat/wiki/Overview overview] page.
+If you want to change some of the configuration you can open up *conf.php* in your favorite editor (nano or vim or something similar) and there are the default options for all users. The comments above the setting should explain what it's for and what you can enter. Users can later override these with their own preferences through the settings menu as described on the [http://code.google.com/p/rutorrent-chat/wiki/Overview overview] page.
 
 
 === Finished ===
