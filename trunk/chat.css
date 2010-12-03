@@ -19,7 +19,7 @@ div#chatSmileys table {border-collapse: collapse;}
 div#chatSmileys table tr td {width: 15px; white-space: nowrap; border: solid 1px #D0D0D0; padding: 5px;}
 div#chatSmileys table tr td span {cursor: pointer;}
 
-div#chatPrompt {height: 105px; width: 380px;}
+div#chatPrompt {width: 380px;}
 div#chatPrompt-header {background-image: url(./images/error.gif);}
 div#chatPrompt-content {line-height: 16px; margin: 5px; padding: 5px; width: 360px;}
 
