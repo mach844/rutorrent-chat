@@ -410,43 +410,6 @@ plugin.onLangLoaded = function()
             $("#chatMessage").focus();
         });
     }
-/*
-    theDialogManager.make("clearChat", theUILang.chatClearPrompt,
-        "<div id='clearChat-content' class='content'>" + theUILang.chatClearPromptText + "</div>"+
-            "<div class='aright buttons-list' id='clearChat-buttons'>"+
-                "<input type='button' id='clearChatTemp' value='" + theUILang.chatTemporarily + "' class='Button'/>"+
-                "<input type='button' id='clearChatPerm' value='" + theUILang.chatPermanently + "' class='Button'/>"+
-                "<input type='button' id='clearChatCancel' value='" + theUILang.Cancel + "' class='Button'/>"+
-            "</div>"+
-        "</div>",
-        true
-    );
-
-    $("#clearChatTemp").click(function()
-    {
-        $("#chatarea").html("");
-        theDialogManager.hide("clearChat");
-        return(false);
-    });
-
-    $("#clearChatPerm").click(function()
-    {
-        theWebUI.clearChatConfirmed();
-        theDialogManager.hide("clearChat");
-        return(false);
-    });
-
-    $("#clearChatCancel").click(function()
-    {
-        theDialogManager.hide("clearChat");
-        return(false);
-    });
-
-    theDialogManager.setHandler("clearChat", "afterHide", function()
-    {
-        $("#chatMessage").focus();
-    });
-*/
 
     if (plugin.canChangeOptions()) {
         this.attachPageToOptions( $("<div>").attr("id", "st_chat").html(
