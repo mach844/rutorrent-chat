@@ -441,7 +441,7 @@ plugin.onLangLoaded = function()
                 "</div>"+
                 "<div class='op50l algnright'>"+
                     "<label for='chat.smileyset'>" + theUILang.chatSmileySet + "</label><select id='chat.smileyset'>"+
-                        "<option value='1'" + (plugin.settings["smileySet"] == '' ? " selected='selected'" : "") + ">" + theUILang.chatSmileyRound + "</option>"+
+                        "<option value='1'" + (plugin.settings["smileySet"] == 1 ? " selected='selected'" : "") + ">" + theUILang.chatSmileyRound + "</option>"+
                         "<option value='2'" + (plugin.settings["smileySet"] == 2 ? " selected='selected'" : "") + ">" + theUILang.chatSmileySquare + "</option>"+
                     "</select>"+
                 "</div>"+
